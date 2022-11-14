@@ -17,7 +17,7 @@ const Login = () => {
   };
 
   function inputVal(e) {
-    if (e.target.value === 'id') {
+    if (e.target.name === 'id') {
       idLength = e.target.value.length;
     } else {
       pwLength = e.target.value.length;
@@ -60,7 +60,6 @@ const Login = () => {
           <div className="idWrap">
             <input
               name="id"
-              type="password"
               className="idFoam"
               placeholder="아이디를 입력하세요"
               onChange={inputVal}

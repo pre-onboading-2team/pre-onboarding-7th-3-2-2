@@ -1,8 +1,17 @@
 import React from 'react';
+import Sider from './Sider';
 import './Main.scss';
 
 const Main = () => {
-  return <>안 녕</>;
+  return (
+    <div>
+      <Sider />
+      <div className="siderBar" />
+      <div className="contentWrap">
+        <div className="content" />
+      </div>
+    </div>
+  );
 };
 
 export default Main;

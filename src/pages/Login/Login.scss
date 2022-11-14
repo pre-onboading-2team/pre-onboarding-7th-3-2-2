@@ -83,18 +83,17 @@
     color: rgb(81, 82, 79);
     cursor: pointer;
     font-size: 2px;
-    background-color: rgb(216, 227, 124);
-
+    background-color: rgb(243 255 138);
+    border: none;
+    &:disabled {
+      background-color: #ccc;
+      cursor: default;
+    }
     .loginIcon {
       font-size: 12px;
       position: absolute;
       left: 131px;
       bottom: 63px;
-    }
-
-    &:disabled {
-      background-color: #ccc;
-      cursor: default;
     }
   }
 }
