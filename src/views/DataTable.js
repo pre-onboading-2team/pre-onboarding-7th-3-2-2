@@ -1,38 +1,50 @@
 import * as React from 'react';
-// import { DataGrid } from '@material-ui/data-grid';
 import { DataGrid } from '@mui/x-data-grid';
 
 const columns = [
-  { field: 'id', headerName: 'ID', width: 90 },
-  {
-    field: 'firstName',
-    headerName: 'First name',
-    width: 150,
-    editable: true,
-  },
-  {
-    field: 'lastName',
-    headerName: 'Last name',
-    width: 150,
-    editable: true,
-  },
+  { field: 'id', headerName: '증권사', width: 70 },
+  { field: 'firstName', headerName: '계좌번호', width: 80 },
+  { field: 'lastName', headerName: '고객명', width: 70 },
   {
     field: 'age',
-    headerName: 'Age',
+    headerName: '운용상태',
     type: 'number',
-    width: 110,
-    editable: true,
+    width: 100,
+  },
+  {
+    field: 'principal',
+    headerName: '계약원금',
+    width: 150,
+    valueGetter: params =>
+      `${params.row.firstName || ''} ${params.row.lastName || ''}`,
   },
   {
     field: 'fullName',
-    headerName: 'Full name',
-    description: 'This column has a value getter and is not sortable.',
-    sortable: false,
-    width: 160,
+    headerName: '총자산',
+    width: 100,
     valueGetter: params =>
-      `${params.getValue(params.id, 'firstName') || ''} ${
-        params.getValue(params.id, 'lastName') || ''
-      }`,
+      `${params.row.firstName || ''} ${params.row.lastName || ''}`,
+  },
+  {
+    field: 'profitOrLoss',
+    headerName: '평가손익',
+    width: 100,
+    valueGetter: params =>
+      `${params.row.firstName || ''} ${params.row.lastName || ''}`,
+  },
+  {
+    field: 'profitRate',
+    headerName: '수익률',
+    width: 100,
+    valueGetter: params =>
+      `${params.row.firstName || ''} ${params.row.lastName || ''}`,
+  },
+  {
+    field: 'productName',
+    headerName: '상품명',
+    width: 100,
+    valueGetter: params =>
+      `${params.row.firstName || ''} ${params.row.lastName || ''}`,
   },
 ];
 
