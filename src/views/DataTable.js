@@ -1,19 +1,27 @@
 import * as React from 'react';
-import Button from '@mui/material/Button';
+// import { DataGrid } from '@material-ui/data-grid';
 import { DataGrid } from '@mui/x-data-grid';
 
-// 참고 경로는 이걸로
-// https://mui.com/material-ui/getting-started/usage/
-
 const columns = [
-  { field: 'id', headerName: 'ID', width: 70 },
-  { field: 'firstName', headerName: 'First name', width: 130 },
-  { field: 'lastName', headerName: 'Last name', width: 130 },
+  { field: 'id', headerName: 'ID', width: 90 },
+  {
+    field: 'firstName',
+    headerName: 'First name',
+    width: 150,
+    editable: true,
+  },
+  {
+    field: 'lastName',
+    headerName: 'Last name',
+    width: 150,
+    editable: true,
+  },
   {
     field: 'age',
     headerName: 'Age',
     type: 'number',
-    width: 90,
+    width: 110,
+    editable: true,
   },
   {
     field: 'fullName',
@@ -22,7 +30,9 @@ const columns = [
     sortable: false,
     width: 160,
     valueGetter: params =>
-      `${params.row.firstName || ''} ${params.row.lastName || ''}`,
+      `${params.getValue(params.id, 'firstName') || ''} ${
+        params.getValue(params.id, 'lastName') || ''
+      }`,
   },
 ];
 
@@ -45,10 +55,9 @@ export default function DataTable() {
         rows={rows}
         columns={columns}
         pageSize={5}
-        rowsPerPageOptions={[5]}
         checkboxSelection
+        disableSelectionOnClick
       />
-      <Button variant="contained">Hello World</Button>;
     </div>
   );
 }
