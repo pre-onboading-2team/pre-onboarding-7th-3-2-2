@@ -13,7 +13,7 @@ const Login = () => {
   const [val, setVal] = useState(true);
   const navigate = useNavigate();
   const goMain = () => {
-    navigate('/');
+    navigate('/account');
   };
 
   function inputVal(e) {
@@ -78,10 +78,17 @@ const Login = () => {
           </div>
         </div>
 
-        <button id="button" disabled={val} type="button" onClick={loginClcik}>
-          로그인
-          <FontAwesomeIcon icon={faRightToBracket} className="loginIcon" />
-        </button>
+        <div className="btnWrap">
+          <button
+            className="loginBtn"
+            disabled={val}
+            type="button"
+            onClick={loginClcik}
+          >
+            로그인
+            <FontAwesomeIcon icon={faRightToBracket} className="loginIcon" />
+          </button>
+        </div>
       </div>
     </div>
   );

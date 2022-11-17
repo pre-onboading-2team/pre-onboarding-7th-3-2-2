@@ -8,8 +8,8 @@ function Router() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/" element={<Main />} />
+        <Route path="/" element={<Login />} />
+        <Route path="/account" element={<Main />} />
         <Route path="/user" element={<User />} />
       </Routes>
     </BrowserRouter>
