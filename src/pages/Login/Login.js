@@ -51,6 +51,7 @@ const Login = () => {
   }
   return (
     <div className="loginWrap">
+      <h1 className="title">PREFACE</h1>
       <div className="loginFoam">
         <div className="loginHeader">
           <FontAwesomeIcon icon={faUser} className="search" />
@@ -90,6 +91,7 @@ const Login = () => {
           </button>
         </div>
       </div>
+      <p className="copy">ⓒ December and Company</p>
     </div>
   );
 };
