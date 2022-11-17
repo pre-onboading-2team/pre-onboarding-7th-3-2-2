@@ -1,0 +1,111 @@
+.loginWrap {
+  padding-top: 150px;
+
+  .title {
+    font-size: 50px;
+    text-align: center;
+  }
+
+  .loginFoam {
+    border-radius: 10px;
+    margin: 40px auto 0;
+    width: 300px;
+    padding: 0 0 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+  }
+
+  .loginHeader {
+    height: 40px;
+    line-height: 40px;
+    align-items: center;
+    padding: 0 15px;
+    font-size: 15px;
+    background-color: #f5f7fa;
+    border-bottom: 1px solid #e1e3e5;
+    border-radius: 10px 10px 0 0;
+
+    .search {
+      margin-right: 5px;
+      color: #666;
+    }
+  }
+
+  .inputWrap {
+    padding: 0 20px;
+
+    .idWrap {
+      position: relative;
+      margin-top: 20px;
+
+      .idFoam {
+        box-sizing: border-box;
+        width: 100%;
+        height: 40px;
+        border: 1px solid #e1e3e5;
+        padding-left: 40px;
+      }
+
+      .idUser {
+        position: absolute;
+        left: 14px;
+        top: 10px;
+        color: #666;
+      }
+    }
+
+    .pwWrap {
+      position: relative;
+      margin-top: 20px;
+
+      .pwFoam {
+        box-sizing: border-box;
+        width: 100%;
+        height: 40px;
+        border: 1px solid #e1e3e5;
+        padding-left: 40px;
+      }
+
+      .pwUser {
+        position: absolute;
+        left: 14px;
+        top: 10px;
+        color: #666;
+      }
+    }
+  }
+
+  .btnWrap {
+    padding: 0 20px;
+    margin-top: 20px;
+
+    .loginBtn {
+      width: 100%;
+      height: 40px;
+      background-color: rgb(243 255 138);
+      border: 1px solid #e1e3e5;
+      cursor: pointer;
+      position: relative;
+
+      &:disabled {
+        background-color: #ccc;
+        cursor: default;
+      }
+
+      .loginIcon {
+        position: absolute;
+        top: 14px;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-left: -30px;
+        font-size: 12px;
+      }
+    }
+  }
+  .copy {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 12px;
+    color: #999;
+  }
+}
