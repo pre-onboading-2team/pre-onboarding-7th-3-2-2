@@ -8,7 +8,7 @@ import {
   convertAccountState,
   convertBroker,
   convertDateToKr,
-  maskingName,
+  maskingNumber,
 } from '../../../utils/useful';
 
 interface AccountItemProps {
@@ -28,9 +28,9 @@ export default function AccountItem({ account }: AccountItemProps) {
 
   return (
     <tr>
-      <td>{data?.name}</td>
+      <td className="p-4">{data?.name}</td>
       <td>{convertBroker(account.broker_id)}</td>
-      <td>{maskingName(account.number)}</td>
+      <td>{maskingNumber(account.number)}</td>
       <td>{convertAccountState(account.status)}</td>
       <td>{account.name}</td>
       <td>{addCommas(account.assets)}</td>

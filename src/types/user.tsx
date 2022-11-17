@@ -8,13 +8,13 @@ export interface UserResponseProps {
 export interface UserFetchResponseProps {
   address: string;
   age: number;
-  birth_date: Date;
-  created_at: Date;
+  birth_date: string;
+  created_at: string;
   detail_address: string;
   email: string;
-  gender_origin: GenderOriginProps;
+  gender_origin: number;
   id: number;
-  last_login: Date;
+  last_login: string;
   name: string;
   phone_number: string;
   photo: string;
@@ -38,7 +38,7 @@ export interface UserInputProps {
   password: string;
 }
 
-type GenderOriginProps = 1 | 2;
+type GenderOriginProps = '남' | '여';
 
 interface UserProps {
   id: number;
