@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { DataGrid } from '@mui/x-data-grid';
+import { useNavigate } from 'react-router-dom';
 
 const columns = [
   { field: 'userName', headerName: '고객명', width: 100 },
@@ -52,9 +53,9 @@ export default function DataTable(props) {
     4: '해지',
   };
 
-  data.forEach(item => {
+  data.forEach((item, idx) => {
     rowsData.push({
-      id: item.id,
+      id: idx,
       userName: item.user.name,
       brokerName: mock[item.broker_id],
       number: item.number,
@@ -67,7 +68,13 @@ export default function DataTable(props) {
     });
   });
 
+  const navigate = useNavigate();
   const rows = rowsData;
+  const func = e => {
+    if (e.field === 'userName') {
+      navigate('./user');
+    }
+  };
 
   return (
     <div style={{ height: 700, width: '100%' }}>
@@ -77,6 +84,7 @@ export default function DataTable(props) {
         pageSize={11}
         checkboxSelection
         disableSelectionOnClick
+        onCellClick={func}
       />
     </div>
   );

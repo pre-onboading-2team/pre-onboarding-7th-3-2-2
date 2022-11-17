@@ -26,7 +26,7 @@ const Login = () => {
   }
 
   function runServer() {
-    fetch('http://localhost:4000/login', {
+    fetch('http://localhost:4000/signin', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
