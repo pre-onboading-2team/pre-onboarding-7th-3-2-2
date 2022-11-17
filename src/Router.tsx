@@ -3,7 +3,11 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Main from './pages/Main/Main';
 import Login from './pages/Login/Login';
 
-function Router() {
+interface RouterProps {
+  test: string;
+}
+
+function Router({ test }: RouterProps) {
   return (
     <BrowserRouter>
       <Routes>

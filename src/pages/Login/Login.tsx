@@ -16,7 +16,7 @@ const Login = () => {
     navigate('/');
   };
 
-  function inputVal(e) {
+  function inputVal(e: React.ChangeEvent<HTMLInputElement>) {
     if (e.target.name === 'id') {
       idLength = e.target.value.length;
     } else {
