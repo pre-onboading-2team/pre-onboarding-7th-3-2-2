@@ -59,7 +59,7 @@ export default function DataTable(props) {
       brokerName: mock[item.broker_id],
       number: item.number,
       status: numberStatus[item.status],
-      name: item.user.name,
+      name: item.name,
       assets: '₩ ' + item.assets,
       payments: '₩ ' + item.payments,
       is_active: item.is_active ? '활성화' : '비활성화',
