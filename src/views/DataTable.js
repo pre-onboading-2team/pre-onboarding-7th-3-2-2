@@ -45,11 +45,11 @@ export default function DataTable(props) {
   };
 
   let numberStatus = {
-    관리자확인필요: 9999,
-    입금대기: 1,
-    운용중: 2,
-    투자중지: 3,
-    해지: 4,
+    9999: '관리자확인필요',
+    1: '입금대기',
+    2: '운용중',
+    3: '투자중지',
+    4: '해지',
   };
 
   data.forEach(item => {
@@ -58,7 +58,7 @@ export default function DataTable(props) {
       userName: item.user.name,
       brokerName: mock[item.broker_id],
       number: item.number,
-      status: Object.keys(numberStatus),
+      status: numberStatus[item.status],
       name: item.user.name,
       assets: '₩ ' + item.assets,
       payments: '₩ ' + item.payments,
