@@ -20,12 +20,12 @@ export default function useUserList() {
 
   const handlePageNext = () => {
     if (Number.isNaN(Number(page)) || data.length === 0) return;
-    router.push(`/users?\\_page=${Number(page) + 1}`);
+    router.push(`/users?page=${Number(page) + 1}`);
   };
 
   const handlePagePrev = () => {
     if (Number.isNaN(Number(page)) || page === '1') return;
-    router.push(`/users?\\_page=${Number(page) + -1}`);
+    router.push(`/users?page=${Number(page) + -1}`);
   };
   return { data, isLoading, handlePageNext, handlePagePrev, page };
 }
