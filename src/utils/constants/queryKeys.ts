@@ -2,4 +2,6 @@
 export const queryKeys = {
   user: 'user',
   account: 'account',
+  userList: 'userList',
+  users: 'users',
 } as const;

@@ -1,3 +1,10 @@
+import Main from '../src/layouts/Main';
+import AccountContainer from '../src/feature/accounts/components/AccountContainer';
+
 export default function account() {
-  return <div>1</div>;
+  return (
+    <Main title="계좌목록">
+      <AccountContainer />
+    </Main>
+  );
 }

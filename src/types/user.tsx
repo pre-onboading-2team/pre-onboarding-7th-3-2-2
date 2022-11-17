@@ -1,3 +1,5 @@
+export type UserListResponseProps = Array<UserFetchResponseProps>;
+
 export interface UserResponseProps {
   accessToken: string;
   user: UserProps;
@@ -18,6 +20,17 @@ export interface UserFetchResponseProps {
   photo: string;
   updated_at: Date;
   uuid: string;
+}
+
+export interface UserSettingProps {
+  id: number;
+  uuid: string;
+  allow_marketing_push: boolean;
+  allow_invest_push: boolean;
+  is_active: boolean;
+  is_staff: boolean;
+  created_at: Date;
+  updated_at: Date;
 }
 
 export interface UserInputProps {
