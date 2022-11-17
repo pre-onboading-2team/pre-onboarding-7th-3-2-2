@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Slider.scss';
 
 const Slider = () => {
@@ -6,7 +7,9 @@ const Slider = () => {
     <div className="sldierNav">
       <div className="sliderWrap">
         <div className="navHeader">DECEMBER</div>
-        <div className="user">투자계좌</div>
+        <div className="user">
+          <Link to="./login"> 투자계좌</Link>
+        </div>
         <div className="account">사용자</div>
         <div className="logout">로그아웃</div>
       </div>
