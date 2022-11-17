@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import DenseTable from '../../views/DenseTable';
+import Slider from '../../views/Slider';
 import './User.scss';
 
 const User = () => {
@@ -20,8 +22,12 @@ const User = () => {
         setUsers(result);
       });
   }, []);
-  console.log(users);
 
-  return <>안녕</>;
+  return (
+    <div className="userWrap">
+      <Slider />
+      <DenseTable users={users} />
+    </div>
+  );
 };
 export default User;

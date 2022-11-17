@@ -39,7 +39,6 @@ const Login = () => {
       .then(response => response.json())
       .then(data => {
         if (data.accessToken) {
-          console.log(data);
           localStorage.setItem('token', data.accessToken);
         }
       });
