@@ -5,24 +5,10 @@ import './Main.scss';
 
 const Main = () => {
   const [data, setData] = useState([]);
-  const [user, setUser] = useState([]);
   const token = localStorage.getItem('token');
 
   useEffect(() => {
-    fetch('http://localhost:4000/users', {
-      method: 'GET',
-      headers: {
-        Authorization: 'Bearer ' + token,
-      },
-    })
-      .then(response => response.json())
-      .then(result => {
-        setUser(result);
-      });
-  }, []);
-
-  useEffect(() => {
-    fetch('http://localhost:4000/accounts', {
+    fetch('http://localhost:4000/accounts?_expand=user', {
       method: 'GET',
       headers: {
         Authorization: 'Bearer ' + token,
@@ -32,13 +18,14 @@ const Main = () => {
       .then(result => {
         setData(result);
       });
+    console.log(token);
   }, []);
 
   return (
     <>
       <div className="mainWrap">
         <Slider />
-        <DataTable data={data} user={user} />
+        <DataTable data={data} />
       </div>
       <div className="siderBar" />
       <div className="contentWrap" />
