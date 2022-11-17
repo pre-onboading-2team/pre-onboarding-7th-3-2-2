@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { DataGrid } from '@mui/x-data-grid';
+import { UserDataType } from '../pages/Main/Main';
 
 const columns = [
   { field: 'userName', headerName: '고객명', width: 100 },
@@ -13,9 +14,11 @@ const columns = [
   { field: 'created_at', headerName: '계좌개설일', width: 110 },
 ];
 
-export default function DataTable(props) {
-  const { data } = props;
-  const rowsData = [];
+interface DataTableProps {
+  data: Array<UserDataType>;
+}
+
+export default function DataTable({ data }: DataTableProps) {
   let mock = {
     209: '유안타증권',
     218: '현대증권',
@@ -52,8 +55,8 @@ export default function DataTable(props) {
     4: '해지',
   };
 
-  data.forEach(item => {
-    rowsData.push({
+  const rowsData = data.map(item => {
+    return {
       id: item.id,
       userName: item.user.name,
       brokerName: mock[item.broker_id],
@@ -64,7 +67,7 @@ export default function DataTable(props) {
       payments: '₩ ' + item.payments,
       is_active: item.is_active ? '활성화' : '비활성화',
       created_at: item.created_at,
-    });
+    };
   });
 
   const rows = rowsData;
