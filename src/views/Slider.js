@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import './Slider.scss';
 
 const Slider = () => {
+  const onClick = () => {
+    alert('로그아웃 되었습니다!');
+  };
   return (
     <div className="sldierNav">
       <div className="sliderWrap">
@@ -13,7 +16,11 @@ const Slider = () => {
         <div className="user">
           <Link to="/userlist">사용자 목록</Link>
         </div>
-        <div className="logout">로그아웃</div>
+        <div className="logout">
+          <Link to="/" onClick={onClick}>
+            로그아웃
+          </Link>
+        </div>
       </div>
     </div>
   );

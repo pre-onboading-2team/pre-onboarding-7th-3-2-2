@@ -3,6 +3,7 @@ import { DataGrid } from '@mui/x-data-grid';
 import { useNavigate } from 'react-router-dom';
 import brokers from './data/brokers.json';
 import numberStatus from './data/numberStatus.json';
+import './DataTable.scss';
 
 const columns = [
   { field: 'userName', headerName: '고객명', width: 100 },
@@ -48,6 +49,7 @@ export default function DataTable(props) {
   return (
     <div style={{ height: 700, width: '100%' }}>
       <DataGrid
+        className="girdStyle"
         rows={rows}
         columns={columns}
         pageSize={11}
