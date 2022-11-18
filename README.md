@@ -112,6 +112,22 @@ $ npm install
 $ npm start
 ```
 
+<br/>
+
+### Server 실행 방법
+
+1. 관련 패키지 설치
+
+``` 
+$ npm install
+```
+
+2. 로컬 서버 실행
+
+```
+$ npm start
+```
+
 
 
 
