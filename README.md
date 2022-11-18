@@ -2,15 +2,17 @@
 
 # Week 3-2. 투자 관리 서비스의 관리자 기능 구현
 
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/99943583/202637983-13ef1bcf-9464-439f-aa4c-04dcecc3a78d.gif)
+
+
 <br />
 
 1. [팀 소개 👫](#1-팀-소개-)
 2. [프로젝트 소개 🚀](#2-프로젝트-소개-)
 3. [기술 스택 🛠](#3-기술-스택-)
 4. [구현 기능 📍](#4-구현-기능-)
-5. [프로젝트 구조 🗂](#5-프로젝트-구조-)
-6. [Best Practice 선정과정👩‍👦‍👦](#6-best-practice-선정과정)
-7. [프로젝트 설치 및 실행 ✨](#7-프로젝트-설치-및-실행-)  
+5. [Best Practice 선정과정👩‍👦‍👦](#6-best-practice-선정과정)
+6. [프로젝트 설치 및 실행 ✨](#7-프로젝트-설치-및-실행-)  
 
 <br />
 
@@ -48,42 +50,64 @@
 ## 4. 구현 기능 📍
 
 - 구현사항
-  - 로그인 기능 구현
-  - 계좌목록 조회 기능 구현
+  - 로그인, 로그아웃 기능 구현
+  - 계좌목록 데이터  조회 기능 구현
   - 계좌목록  페이지네이션 기능 구현
-  - 사용자상세 조회 기능 구현
+  - 계좌 목록 사용자 이름 클릭시 사용자 정보 조회 기능 구현 
+  - 사용자상세 데이터 조회 기능 구현
   - 사용자상세 페이지네이션 기능 구현
 
 <br />
 
-## 5. 프로젝트 구조 🗂
-
-```bash
-src
- ┣ pages // 페이지 컴포넌트
- ┗ views // 도메인별 컴포넌트 관리
-```
-
-<br/>
-
 
 ## 6. Best Practice 선정과정👩‍👦‍👦
 
-### MUI DataGrid 를 활용한 필터링 및 검색 기능 기능 구현
-
-<img width="378" alt="스크린샷 2022-11-18 오전 10 26 49" src="https://user-images.githubusercontent.com/107467812/202595574-cdb48371-5416-4c6e-be36-35acb0150fd2.png">
+### json-server 을 활용 전체 데이터 조회 기능 구현
 
 ```js
-// src/views/DataTable.js
 
-<DataGrid
-        rows={rows}
-        columns={columns}
-        pageSize={11}
-        checkboxSelection
-        disableSelectionOnClick
-        onCellClick={pageDetail}
-      />
+  useEffect(() => {
+    fetch('http://localhost:4000/accounts?_expand=user', {
+      method: 'GET',
+      headers: {
+        Authorization: 'Bearer ' + token,
+      },
+    })
+      .then(response => response.json())
+      .then(result => {
+        setData(result);
+      });
+    console.log(token);
+  }, []);
+  
+  ```
+
+### 사용자 이름 클릭시 해당 사용자 상세 정보 조회 기능 구현 
+
+
+```js
+  const pageDetail = e => {
+    if (e.field === 'userName') {
+      let val = data[e.row.id];
+      navigate(`user/${val.id}`);
+    }
+  };
+  
+  ```
+  
+  ```js
+    useEffect(() => {
+    fetch(`http://localhost:4000/users/${userid}`, {
+      method: 'GET',
+      headers: {
+        Authorization: 'Bearer ' + token,
+      },
+    })
+      .then(response => response.json())
+      .then(result => {
+        setUsers(result);
+      });
+  }, []);
 
 ```
 
